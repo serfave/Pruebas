@@ -1,5 +1,7 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,24 +12,38 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', function () {
     return view('welcome');
+});
+Route::get('/ropa', function () {
+    return view('layout.ropa');
+});
+Route::get('/electronica', function () {
+    return view('layout.electronica');
+});
+Route::get('/electrodomestico', function () {
+    return view('layout.electrodomestico');
 });
 Route::get('autenticar', function() {
     return view('autenticar'); 
     //buscara el archivo 'autenticar.php' o 'autenticar.blade.php' dentro de resoureces/views
 });
-Route::get('tablero', function() {
+Route::get('/tablero', function() {
     return view('supervisor.tablero'); 
     //buscara el archivo 'tablero.php' o 'tablero.blade.php' dentro de resoureces/views/supervisor
 });
+/*Route::get('/crear', function() {
+    return view('supervisor.create'); 
+    //buscara el archivo 'tablero.php' o 'tablero.blade.php' dentro de resoureces/views/supervisor*/
+
 Route::get('revisar', function() {
     return view('encargado.revisar'); 
 });
 Route::get('cuenta', function() {
     return view('cliente.cuenta'); 
 });
-Route::post('validar'        , 'AutenticarControler@validar');
+Route::post('validar','AutenticarControler@validar');
 Route::get('listar_por_categoria/{categoria_id}','BuscarControler@listar_por');
 
 
@@ -40,9 +56,3 @@ Route::put('Categorias/{categoria}','CategoriasControler@update');
 Route::delete('Categorias/{categoria}','CategoriasControler@destroy');
 Route::get('Categorias/{categoria}/edit','CategoriasControler@edit');
 //Route::resource('Categorias','CategoriasControler');
-
-
-
-
-
-
