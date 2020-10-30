@@ -13,7 +13,7 @@ class CategoriasControler extends Controller
      */
     public function index()
     {
-        //
+         return view('supervisor.tablero'); //
     }
 
     /**
@@ -23,7 +23,7 @@ class CategoriasControler extends Controller
      */
     public function create()
     {
-        //
+        //return view('supervisor.crea');//
     }
 
     /**
@@ -56,7 +56,7 @@ class CategoriasControler extends Controller
      */
     public function edit($id)
     {
-        //
+         return view('supervisor.editCategorias');//
     }
 
     /**
